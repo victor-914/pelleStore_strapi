@@ -1,0 +1,1 @@
+# pelleStore_strapi

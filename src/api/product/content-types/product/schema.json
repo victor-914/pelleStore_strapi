@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product"
+    "displayName": "product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +16,15 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "description": {
       "type": "richtext",
@@ -35,6 +36,19 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "female",
+        "male"
+      ]
+    },
+    "catergories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catergory.catergory",
+      "mappedBy": "product"
     }
   }
 }

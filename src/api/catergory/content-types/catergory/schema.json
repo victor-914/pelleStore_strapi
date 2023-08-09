@@ -4,7 +4,8 @@
   "info": {
     "singularName": "catergory",
     "pluralName": "catergories",
-    "displayName": "catergory"
+    "displayName": "catergory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,14 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": false
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "catergories"
     }
   }
 }
